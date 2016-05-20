@@ -35,7 +35,6 @@ public class AccountService {
     public Account findUserByName(String loginName, String password,String ip) {
         Account account = accountDao.findByProperty("loginName",loginName);
         if(account != null){
-            System.out.println(111);
             //判断账号的状态
            if("禁用".equals(account.getState())){
                throw  new LockedException();
@@ -65,6 +64,7 @@ public class AccountService {
     public void save(Account account) {
         account.setCreatetime(DateTime.now().toString("yyyy-MM-dd HH:mm:ss"));
         account.setState(Account.USER_STATE_OK);
+        account.setPassword(DigestUtils.md5Hex(account.getPassword()));
         accountDao.save(account);
     }
 
@@ -86,5 +86,17 @@ public class AccountService {
 
     public List<Role> findAllRole() {
         return roleDao.findAll();
+    }
+
+    public void update(Account account) {
+        accountDao.save(account);
+    }
+
+    public void locked(Integer id) {
+        Account account = accountDao.findById(id);
+        if(account == null){
+            throw new NotFoundException("您要禁用的账户不存在");
+        }
+       account.setState(Account.USER_STATE_DISABLE);
     }
 }

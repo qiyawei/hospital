@@ -58,6 +58,7 @@
                             <th>电话</th>
                             <th>最后登录时间</th>
                             <th>最后登录IP</th>
+                            <th>账号状态</th>
                             <th>#</th>
                         </tr>
                         </thead>
@@ -69,9 +70,18 @@
                             <td>${account.accountTel}</td>
                             <td>${account.logintime}2014-07-09 12:34</td>
                             <td>${account.loginIp}</td>
+                            <c:choose>
+                                <c:when test="${account.state == '禁用'}">
+                                    <td><span class="label label-important">${account.state}</span></td>
+                                </c:when>
+                                <c:otherwise>
+                                    <td>${account.state}</td>
+                                </c:otherwise>
+                            </c:choose>
+
                             <td>
                                 <a href="/account/edit.do?id=${account.id}">修改</a>
-                                <a href="">禁用</a>
+                                <a href="/account/locked.do?id=${account.id}">禁用</a>
                                 <a href="/account/del.do?id=${account.id}">删除</a>
                             </td>
                         </tr>

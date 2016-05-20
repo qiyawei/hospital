@@ -62,10 +62,30 @@ public class AccountAction extends BaseAction {
     public String edit(){
         account = accountService.findById(id);
         roleList = accountService.findAllRole();
+        System.out.println(roleList.size());
         return SUCCESS;
     }
 
 
+
+    @Action(value = "update",results = {
+            @Result(name = "success",type = "redirectAction",params = {
+                    "actionName","list","namespace","/account"
+            })
+    })
+    public String update(){
+        accountService.update(account);
+        return SUCCESS;
+    }
+    @Action(value = "locked",results = {
+            @Result(type = "redirectAction" ,params = {
+                    "actionName","list"
+            })
+    })
+    public String locked(){
+        accountService.locked(id);
+        return SUCCESS;
+    }
 
     /**
      * get set 方法
@@ -102,5 +122,13 @@ public class AccountAction extends BaseAction {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public List<Role> getRoleList() {
+        return roleList;
+    }
+
+    public void setRoleList(List<Role> roleList) {
+        this.roleList = roleList;
     }
 }
