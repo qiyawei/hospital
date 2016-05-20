@@ -1,3 +1,4 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <div class="navbar navbar-static-top">
     <div class="navbar-inner">
         <a class="brand" href="#">凯盛医疗</a>
@@ -10,12 +11,12 @@
             <li class="dropdown active">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" ><i class="fa fa-cogs"></i> 系统设置 <b class="caret"></b></a>
                 <ul class="dropdown-menu">
-                    <li><a href=""><i class="fa fa-sitemap"></i> 科室设置</a></li>
+                    <li><a href="/dept/list.do"><i class="fa fa-sitemap"></i> 科室设置</a></li>
                     <li><a href=""><i class="fa fa-medkit"></i> 病种设置</a></li>
                     <li><a href=""><i class="fa fa-bars"></i> 医保类型设置</a></li>
                     <li><a href=""><i class="fa fa-child"></i> 患者状态设置</a></li>
                     <li class="divider"></li>
-                    <li><a href=""><i class="fa fa-user-md"></i> 账号设置</a></li>
+                    <li><a href="/account/list.do"><i class="fa fa-user-md"></i> 账号设置</a></li>
                 </ul>
             </li>
         </ul>

@@ -74,12 +74,12 @@ public abstract class BaseDao<T,PK extends Serializable> {
         return criteria.list();
     }
 
-    public Page<T> findPage(Integer pageNo,Integer pageSize,List<SearchFilter> searchFilters) {
+    public Page<T> findPage(String pageNo,Integer pageSize,List<SearchFilter> searchFilters) {
         Criteria criteria = getCriteriaBySearchFilter(searchFilters);
 
         int count = countUseCriteria(criteria).intValue();
 
-        Page<T> page = new Page<T>(pageNo.toString(),count,pageSize);
+        Page<T> page = new Page<T>(pageNo,count,pageSize);
         criteria.setFirstResult(page.getStart());
         criteria.setMaxResults(page.getSize());
         page.setItems(criteria.list());

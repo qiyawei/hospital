@@ -57,7 +57,7 @@ public class AccountService {
 
 
     public Page<Account> findAllByPage(String pageNo) {
-        Page<Account> page = accountDao.findPage(pageNo,5);
+        Page<Account> page = accountDao.findPage(pageNo,3);
         return page;
     }
 
