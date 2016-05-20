@@ -68,4 +68,12 @@ public class HomeAction extends BaseAction {
     public void setLoginName(String loginName) {
         this.loginName = loginName;
     }
+
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
+    }
 }

@@ -4,6 +4,7 @@ import com.kaishengit.dao.AccountDao;
 import com.kaishengit.exception.LockedException;
 import com.kaishengit.exception.NotFoundException;
 import com.kaishengit.pojo.Account;
+import org.apache.commons.codec.digest.DigestUtils;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.inject.Inject;
@@ -27,19 +28,20 @@ public class AccountService {
     public Account findUserByName(String loginName, String password) {
         Account account = accountDao.findByProperty("loginName",loginName);
         if(account != null){
+            System.out.println(111);
             //判断账号的状态
            if("正常".equals(account.getState())){
                throw  new LockedException();
            }else{
                //判断密码是否指正确
-               if(account.getPassword().equals(password)){
+               if(account.getPassword().equals(DigestUtils.md5(password))){
                    return account;
                }else {
                    throw new NotFoundException();
                }
            }
         }else{
-            return null;
+            throw new NotFoundException();
         }
 
     }

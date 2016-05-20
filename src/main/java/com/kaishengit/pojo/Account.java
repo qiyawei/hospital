@@ -17,7 +17,7 @@ public class Account {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    private String accoutName;
+    private String accountName;
     private String password;
     private String accountTel;
     private String loginName;
@@ -39,11 +39,11 @@ public class Account {
     }
 
     public String getAccoutName() {
-        return accoutName;
+        return accountName;
     }
 
     public void setAccoutName(String accoutName) {
-        this.accoutName = accoutName;
+        this.accountName = accoutName;
     }
 
     public String getPassword() {
