@@ -1,5 +1,7 @@
+com\kaishengit\util\Page.class
+com\kaishengit\interceptor\LoginInterceptor.class
 com\kaishengit\action\BaseAction.class
 com\kaishengit\dao\BaseDao.class
-com\kaishengit\util\Page.class
+com\kaishengit\action\HomeAction.class
 com\kaishengit\util\SearchFilter.class
 com\kaishengit\util\Strings.class
