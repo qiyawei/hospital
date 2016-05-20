@@ -45,9 +45,30 @@ public class DeptAction extends BaseAction{
         return SUCCESS;
     }
 
+    @Action(value = "del",results = {
+            @Result(type = "redirectAction",params = {
+                    "actionName","list","namespace","/dept"
+            })
+    })
+    public String del(){
+        deptService.del(id);
+        return SUCCESS;
+    }
+    @Action("edit")
+    public String edit(){
+        dept = deptService.findById(id);
+        return SUCCESS;
+    }
 
-
-
+    @Action(value = "update",results = {
+            @Result(type = "redirectAction",params = {
+                    "actionName","list"
+            })
+    })
+    public String update(){
+        deptService.update(dept);
+        return SUCCESS;
+    }
 
 
 

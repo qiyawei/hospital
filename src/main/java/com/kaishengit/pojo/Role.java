@@ -2,6 +2,7 @@ package com.kaishengit.pojo;
 
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 
 /**
@@ -9,7 +10,7 @@ import javax.persistence.*;
  */
 @Entity
 @Table(name = "t_role")
-public class Role {
+public class Role implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;

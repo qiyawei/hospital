@@ -1,13 +1,14 @@
 package com.kaishengit.pojo;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 /**
  * Created by qiyawei on 2016/5/20.
  */
 @Entity
 @Table(name = "t_account")
-public class Account {
+public class Account implements Serializable{
 
 
     public static final String USER_STATE_OK = "正常";

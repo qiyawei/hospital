@@ -1,5 +1,6 @@
 package com.kaishengit.dao;
 
+import com.kaishengit.pojo.Disease;
 import com.kaishengit.util.Page;
 import com.kaishengit.util.SearchFilter;
 import org.hibernate.Criteria;
@@ -33,6 +34,9 @@ public abstract class BaseDao<T,PK extends Serializable> {
         return sessionFactory.getCurrentSession();
     }
 
+    public Criteria getCriteria(){
+        return getSession().createCriteria(clazz);
+    }
     public void save(T entity) {
         getSession().saveOrUpdate(entity);
     }
@@ -50,12 +54,12 @@ public abstract class BaseDao<T,PK extends Serializable> {
     }
 
     public List<T> findAll() {
-        Criteria criteria = getSession().createCriteria(clazz);
+        Criteria criteria = getCriteria();
         return criteria.list();
     }
 
     public List<T> findByPage(Integer start,Integer end) {
-        Criteria criteria = getSession().createCriteria(clazz);
+        Criteria criteria = getCriteria();
         criteria.setFirstResult(start);
         criteria.setMaxResults(end);
         return criteria.list();
@@ -99,7 +103,7 @@ public abstract class BaseDao<T,PK extends Serializable> {
     }
 
     private Criteria getCriteriaBySearchFilter(List<SearchFilter> searchFilters) {
-        Criteria criteria = getSession().createCriteria(clazz);
+        Criteria criteria = getCriteria();
         for(SearchFilter searchFilter : searchFilters) {
             String propertyName = searchFilter.getPropertyName();
             String equalType = searchFilter.getEqualType();
@@ -140,7 +144,7 @@ public abstract class BaseDao<T,PK extends Serializable> {
 
 
     public List<T> findAllOrder(String orderPropertyName,String orderType) {
-        Criteria criteria = getSession().createCriteria(clazz);
+        Criteria criteria = getCriteria();
         if("desc".equalsIgnoreCase(orderType)) {
             criteria.addOrder(Order.desc(orderPropertyName));
         } else {
@@ -150,19 +154,19 @@ public abstract class BaseDao<T,PK extends Serializable> {
     }
 
     public T findByProperty(String propertyName,Object value) {
-        Criteria criteria = getSession().createCriteria(clazz);
+        Criteria criteria = getCriteria();
         criteria.add(Restrictions.eq(propertyName,value));
         return (T) criteria.uniqueResult();
     }
 
     public List<T> findListByProperty(String propertyName,Object value) {
-        Criteria criteria = getSession().createCriteria(clazz);
+        Criteria criteria = getCriteria();
         criteria.add(Restrictions.eq(propertyName,value));
         return criteria.list();
     }
 
     public Long count() {
-        Criteria criteria = getSession().createCriteria(clazz);
+        Criteria criteria = getCriteria();
         criteria.setProjection(Projections.rowCount());
         return (Long) criteria.uniqueResult();
     }

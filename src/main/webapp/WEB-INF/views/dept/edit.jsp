@@ -1,4 +1,3 @@
-
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
@@ -24,11 +23,12 @@
             </span>
                 </div>
                 <div class="box-body form">
-                    <form action="/dept/save.do">
+                    <form action="/dept/update.do" method="post">
+                        <input type="hidden" name="dept.id" value="${dept.id}">
                         <label>科室名称</label>
-                        <input type="text" name="dept.deptName">
+                        <input type="text" name="dept.deptName" value="${dept.deptName}">
                         <label>负责人</label>
-                        <input type="text" name="dept.manager">
+                        <input type="text" name="dept.manager" value="${dept.manager}">
                         <div class="form-actions">
                             <button class="button button-flat-action button-pill">保存</button>
                         </div>

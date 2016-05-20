@@ -1,13 +1,14 @@
 package com.kaishengit.pojo;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 /**
  * Created by qiyawei on 2016/5/20.
  */
 @Entity
 @Table(name = "t_dept")
-public class Dept {
+public class Dept implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;

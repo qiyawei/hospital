@@ -7,7 +7,7 @@
     <title></title>
     <link rel="stylesheet" href="http://cdn.staticfile.org/twitter-bootstrap/2.3.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="http://cdn.staticfile.org/font-awesome/4.1.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="/repo/css/style.css">
 </head>
 <body>
 
@@ -39,7 +39,7 @@
                             <th>${dept.manager}</th>
                             <th>
                                 <a href="/dept/edit.do?id=${dept.id}">修改</a>
-                                <a href="/dept/del.do?id=${dept.id}">删除</a>
+                                <a href="javascript:;" data="${dept.id}" id="delLink">删除</a>
                             </th>
                         </tr>
                         </c:forEach>
@@ -58,6 +58,14 @@
 
 <script src="http://cdn.staticfile.org/jquery/1.11.1/jquery.min.js"></script>
 <script src="http://cdn.staticfile.org/twitter-bootstrap/3.0.0/js/bootstrap.min.js"></script>
-
+<script src="/repo/js/jquery-1.11.3.min.js"></script>
+<script>
+    $(document).delegate("#delLink","click",function(){
+        var id = $(this).attr("data");
+        if(confirm("确定要删除该数据吗?")) {
+             location.href = "/dept/del.do?id="+id;
+        }
+    });
+</script>
 </body>
 </html>
