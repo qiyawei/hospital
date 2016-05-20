@@ -72,5 +72,6 @@
     <orderEntry type="library" name="Maven: org.springframework:spring-tx:3.2.12.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: javax.inject:javax.inject:1" level="project" />
     <orderEntry type="library" name="Maven: commons-codec:commons-codec:1.9" level="project" />
+    <orderEntry type="library" name="Maven: joda-time:joda-time:2.5" level="project" />
   </component>
 </module>

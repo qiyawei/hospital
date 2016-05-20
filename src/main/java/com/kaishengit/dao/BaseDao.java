@@ -61,9 +61,9 @@ public abstract class BaseDao<T,PK extends Serializable> {
         return criteria.list();
     }
 
-    public Page<T> findPage(Integer pageNo,Integer pageSize) {
+    public Page<T> findPage(String pageNo,Integer pageSize) {
         int count = count().intValue();
-        Page<T> page = new Page<T>(pageNo.toString(),count,pageSize);
+        Page<T> page = new Page<T>(pageNo,count,pageSize);
         page.setItems(findByPage(page.getStart(),page.getSize()));
         return page;
     }

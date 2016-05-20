@@ -56,6 +56,7 @@
           <element id="library" level="project" name="Maven: org.springframework:spring-tx:3.2.12.RELEASE" />
           <element id="library" level="project" name="Maven: javax.inject:javax.inject:1" />
           <element id="library" level="project" name="Maven: commons-codec:commons-codec:1.9" />
+          <element id="library" level="project" name="Maven: joda-time:joda-time:2.5" />
         </element>
       </element>
       <element id="directory" name="META-INF">

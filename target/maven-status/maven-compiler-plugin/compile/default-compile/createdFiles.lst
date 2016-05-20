@@ -9,6 +9,8 @@ com\kaishengit\service\AccountService.class
 com\kaishengit\exception\LockedException.class
 com\kaishengit\util\Message.class
 com\kaishengit\dao\BaseDao.class
+com\kaishengit\action\AccountAction.class
+com\kaishengit\dao\RoleDao.class
 com\kaishengit\action\HomeAction.class
 com\kaishengit\util\SearchFilter.class
 com\kaishengit\util\Strings.class

@@ -38,12 +38,12 @@ public class Account {
         this.id = id;
     }
 
-    public String getAccoutName() {
+    public String getAccountName() {
         return accountName;
     }
 
-    public void setAccoutName(String accoutName) {
-        this.accountName = accoutName;
+    public void setAccountName(String accountName) {
+        this.accountName = accountName;
     }
 
     public String getPassword() {
