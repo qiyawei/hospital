@@ -11,7 +11,7 @@
 <div class="container">
 
     <div class="login_warper">
-        <form action="">
+        <form action="/home.do">
             <legend>KaiShengIT</legend>
             <label>账号</label>
             <input type="text">

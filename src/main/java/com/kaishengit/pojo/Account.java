@@ -27,7 +27,7 @@ public class Account {
     private String state;
 
     @ManyToOne
-    @JoinColumn("roleid")
+    @JoinColumn(name = "roleid")
     private Role role;
 
     public Integer getId() {
