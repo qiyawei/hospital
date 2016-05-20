@@ -1,0 +1,5 @@
+com\kaishengit\action\BaseAction.class
+com\kaishengit\dao\BaseDao.class
+com\kaishengit\util\Page.class
+com\kaishengit\util\SearchFilter.class
+com\kaishengit\util\Strings.class

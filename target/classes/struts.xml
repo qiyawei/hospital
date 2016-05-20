@@ -1,0 +1,36 @@
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+
+
+    <constant name="struts.action.extension" value="do"/>
+
+    <constant name="struts.convention.result.path" value="/WEB-INF/views/"/>
+
+    <constant name="struts.convention.default.parent.package" value="basicPackage"/>
+
+    <package name="basicPackage" extends="struts-default,convention-default">
+        <interceptors>
+            <interceptor name="loginInterceptor" class="com.kaishengit.interceptor.LoginInterceptor"/>
+            <interceptor name="myTimer" class="com.kaishengit.interceptor.MyTimerInterceptor"/>
+            <interceptor-stack name="myStack">
+                <interceptor-ref name="defaultStack"/>
+                <!--<interceptor-ref name="loginInterceptor"/>-->
+            </interceptor-stack>
+        </interceptors>
+
+        <default-interceptor-ref name="myStack"/>
+
+        <global-results>
+            <result name="login" type="redirectAction">
+                <param name="actionName">home</param>
+                <param name="namespace">/user</param>
+                <param name="code">1001</param>
+            </result>
+        </global-results>
+    </package>
+
+
+
+</struts>        
