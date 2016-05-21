@@ -13,7 +13,7 @@
                 <ul class="dropdown-menu">
                     <li><a href="/dept/list.do"><i class="fa fa-sitemap"></i> 科室设置</a></li>
                     <li><a href="/disease/list.do"><i class="fa fa-medkit"></i> 病种设置</a></li>
-                    <li><a href=""><i class="fa fa-bars"></i> 医保类型设置</a></li>
+                    <li><a href="/insur/list.do"><i class="fa fa-bars"></i> 医保类型设置</a></li>
                     <li><a href=""><i class="fa fa-child"></i> 患者状态设置</a></li>
                     <li class="divider"></li>
                     <li><a href="/account/list.do"><i class="fa fa-user-md"></i> 账号设置</a></li>
