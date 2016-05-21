@@ -1,5 +1,6 @@
 package com.kaishengit.dao;
 
+
 import com.kaishengit.pojo.Disease;
 import org.hibernate.Criteria;
 

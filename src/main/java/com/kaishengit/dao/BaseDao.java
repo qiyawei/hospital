@@ -84,6 +84,7 @@ public abstract class BaseDao<T,PK extends Serializable> {
         int count = countUseCriteria(criteria).intValue();
 
         Page<T> page = new Page<T>(pageNo,count,pageSize);
+        criteria.addOrder(Order.desc("id"));
         criteria.setFirstResult(page.getStart());
         criteria.setMaxResults(page.getSize());
         page.setItems(criteria.list());
@@ -95,10 +96,10 @@ public abstract class BaseDao<T,PK extends Serializable> {
 
         criteria.setProjection(Projections.rowCount());
         long rowCount = (long) criteria.uniqueResult();
-
-        criteria.setResultTransformer(resultTransformer);
         criteria.setProjection(null);
+        criteria.setResultTransformer(resultTransformer);
 
+       // http://localhost/disease/list.do?q_i_eq_type.id=1
         return rowCount;
     }
 

@@ -38,14 +38,12 @@ public class DiseaseAction extends BaseAction {
         HttpServletRequest request = getHttpRequest();
         List<SearchFilter> searchFilterList = SearchFilter.builderSearchFilter(request);
         page = diseaseService.findAllByParamAndPage(pageNo,searchFilterList);
-        for(Disease disease : page.getItems()){
-            System.out.println(disease.getDiseaseName());
-        }
         deptList = deptService.findAll();
         return SUCCESS;
     }
     @Action("new")
     public String newDept(){
+        deptList = deptService.findAll();
         return SUCCESS;
     }
 
@@ -71,6 +69,7 @@ public class DiseaseAction extends BaseAction {
     }
     @Action("edit")
     public String edit(){
+        deptList = deptService.findAll();
         disease = diseaseService.findById(id);
         return SUCCESS;
     }

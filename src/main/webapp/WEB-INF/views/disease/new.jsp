@@ -22,18 +22,19 @@
                 <div class="box-header">
             <span class="title">
               <i class="fa fa-plus"></i>
-              <a href="disease-list.html"> 病种列表</a>  /  新增疾病
+              <a href="/disease/list.do"> 病种列表</a>  /  修改疾病
             </span>
                 </div>
                 <div class="box-body form">
-                    <form action="">
+                    <form action="/disease/save.do" method="post">
                         <label>疾病名称</label>
-                        <input type="text">
+                        <input type="text" name="disease.diseaseName">
                         <label>所属科室</label>
-                        <select id="ks">
+                        <select id="ks" name="disease.dept.id">
                             <option value=""></option>
-                            <option value="">内科</option>
-                            <option value="">外科</option>
+                            <c:forEach items="${deptList}" var="dept">
+                                <option value="${dept.id}">${dept.deptName}</option>
+                            </c:forEach>>
                         </select>
                         <div class="form-actions">
                             <button class="button button-flat-action button-pill">保存</button>
