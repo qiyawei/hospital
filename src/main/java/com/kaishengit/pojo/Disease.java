@@ -2,6 +2,7 @@ package com.kaishengit.pojo;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.List;
 
 /**
  * Created by qiyawei on 2016/5/20.
@@ -15,9 +16,10 @@ public class Disease implements Serializable {
 
     private String diseaseName;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "deptId")
     private Dept dept;
+
 
 
     public Integer getId() {
@@ -43,4 +45,6 @@ public class Disease implements Serializable {
     public void setDept(Dept dept) {
         this.dept = dept;
     }
+
+
 }

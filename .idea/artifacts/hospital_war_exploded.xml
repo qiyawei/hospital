@@ -57,6 +57,9 @@
           <element id="library" level="project" name="Maven: javax.inject:javax.inject:1" />
           <element id="library" level="project" name="Maven: commons-codec:commons-codec:1.9" />
           <element id="library" level="project" name="Maven: joda-time:joda-time:2.5" />
+          <element id="library" level="project" name="Maven: com.qiniu:qiniu-java-sdk:7.0.8" />
+          <element id="library" level="project" name="Maven: com.squareup.okhttp:okhttp:2.7.1" />
+          <element id="library" level="project" name="Maven: com.squareup.okio:okio:1.6.0" />
         </element>
       </element>
       <element id="directory" name="META-INF">

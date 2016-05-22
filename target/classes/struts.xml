@@ -10,7 +10,7 @@
 
     <constant name="struts.convention.default.parent.package" value="basicPackage"/>
 
-    <package name="basicPackage" extends="struts-default,convention-default">
+    <package name="basicPackage" extends="struts-default,convention-default,json-default">
         <interceptors>
             <interceptor name="loginInterceptor" class="com.kaishengit.interceptor.LoginInterceptor"/>
             <interceptor name="myTimer" class="com.kaishengit.interceptor.MyTimerInterceptor"/>

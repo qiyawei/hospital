@@ -4,8 +4,8 @@
         <a class="brand" href="#">凯盛医疗</a>
         <ul class="nav">
             <li><a href="home.html"><i class="fa fa-home"></i> 首页</a></li>
-            <li><a href="patient-list.html"><i class="fa fa-building"></i> 病人档案</a></li>
-            <li><a href="#"><i class="fa fa-stethoscope"></i>  就诊记录</a></li>
+            <li><a href="/paitent/list.do"><i class="fa fa-building"></i> 病人档案</a></li>
+            <li><a href="/visit/list.do"><i class="fa fa-stethoscope"></i>  就诊记录</a></li>
             <li><a href="#"><i class="fa fa-bell-o"></i> 复诊提醒</a></li>
             <li><a href="#"><i class="fa fa-bar-chart-o"></i> 数据统计</a></li>
             <li class="dropdown active">

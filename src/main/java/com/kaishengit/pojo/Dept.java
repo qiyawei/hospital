@@ -2,6 +2,7 @@ package com.kaishengit.pojo;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.List;
 
 /**
  * Created by qiyawei on 2016/5/20.
@@ -15,6 +16,8 @@ public class Dept implements Serializable{
 
     private String deptName;
     private String manager;
+    @OneToMany(mappedBy = "dept",cascade = CascadeType.REMOVE,fetch = FetchType.EAGER)
+    private List<Disease> diseaseList;
 
     public Integer getId() {
         return id;
@@ -38,5 +41,13 @@ public class Dept implements Serializable{
 
     public void setDeptName(String deptName) {
         this.deptName = deptName;
+    }
+
+    public List<Disease> getDiseaseList() {
+        return diseaseList;
+    }
+
+    public void setDiseaseList(List<Disease> diseaseList) {
+        this.diseaseList = diseaseList;
     }
 }
